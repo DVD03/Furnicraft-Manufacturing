@@ -4,6 +4,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import AIChatbot from './components/AIChatbot';
+import WoodCanvasBackground from './components/WoodCanvasBackground';
 import HomePage from './pages/HomePage';
 import GalleryPage from './pages/GalleryPage';
 import CategoriesPage from './pages/CategoriesPage';
@@ -15,7 +16,12 @@ export default function App() {
   return (
     <ThemeProvider>
       <Router>
-        <div className="flex flex-col min-h-screen bg-[#140f0c]/85 text-slate-100 font-sans selection:bg-amber-500 selection:text-black">
+        {/* Dynamic Canvas Wood Background */}
+        <WoodCanvasBackground />
+
+        {/* Page content — transparent so wood shows through */}
+        <div className="flex flex-col min-h-screen text-slate-100 font-sans selection:bg-amber-500 selection:text-black relative z-10">
+
           <Navbar />
           <main className="flex-grow">
             <Routes>
@@ -35,3 +41,4 @@ export default function App() {
     </ThemeProvider>
   );
 }
+

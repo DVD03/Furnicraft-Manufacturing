@@ -63,7 +63,8 @@ const HomePage = () => {
 
   useEffect(() => {
     return scrollYProgress.on('change', (latest) => {
-      setScrollPercent(Math.round(latest * 100));
+      const val = Math.round(latest * 100);
+      setScrollPercent((prev) => (prev !== val ? val : prev));
     });
   }, [scrollYProgress]);
 
@@ -94,7 +95,8 @@ const HomePage = () => {
               setCategoryTheme('All');
               navigate('/gallery');
             }}
-            className="fixed bottom-20 right-4 sm:bottom-6 sm:right-52 z-40 flex items-center space-x-3 p-2 sm:p-2.5 rounded-full bg-neutral-950/90 border border-amber-500/40 shadow-2xl backdrop-blur-xl group hover:border-amber-400 transition-all cursor-pointer"
+            className="fixed bottom-20 right-4 sm:bottom-6 sm:right-[240px] z-40 flex items-center space-x-3 p-2 sm:p-2.5 rounded-full bg-neutral-950/90 border border-amber-500/40 shadow-2xl backdrop-blur-xl group hover:border-amber-400 transition-all cursor-pointer"
+
           >
             <div className="relative w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center">
               <svg className="w-9 h-9 sm:w-10 sm:h-10 transform -rotate-90">
@@ -162,9 +164,10 @@ const HomePage = () => {
           className="absolute inset-0 z-0 opacity-20 bg-cover bg-center mix-blend-overlay"
           style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1546484475-7f7bd55792da")' }}
         />
-        {/* Ambient orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-500/30 rounded-full blur-[100px] -z-10 mix-blend-screen" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-600/20 rounded-full blur-[100px] -z-10 mix-blend-screen" />
+        {/* Subtle ambient glow */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-600/10 rounded-full blur-[120px] -z-10 pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-amber-700/10 rounded-full blur-[120px] -z-10 pointer-events-none" />
+
 
         <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-8 lg:gap-12 items-center z-10">
           <motion.div 
@@ -314,7 +317,8 @@ const HomePage = () => {
       </section>
 
       {/* SECTION 4: FEATURED PROJECTS */}
-      <section className="py-24 bg-neutral-900 px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="py-24 bg-neutral-950/40 backdrop-blur-xl px-4 sm:px-6 lg:px-8 relative z-10">
+
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-end mb-12">
             <div>
@@ -478,7 +482,8 @@ const HomePage = () => {
       </section>
 
       {/* SECTION 8: 100% SCROLL COMPLETION GALLERY JUMP BANNER */}
-      <section className="py-20 bg-neutral-900 border-t border-amber-500/30 text-center space-y-6 relative overflow-hidden z-10">
+      <section className="py-20 bg-neutral-950/40 backdrop-blur-xl border-t border-amber-500/30 text-center space-y-6 relative overflow-hidden z-10">
+
         <div className="max-w-4xl mx-auto px-4 space-y-5">
           <div className="inline-flex items-center space-x-2.5 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/40 text-amber-300 text-xs font-bold uppercase tracking-widest shadow-lg">
             <span className="w-2.5 h-2.5 rounded-full bg-amber-400 animate-ping"></span>

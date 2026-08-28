@@ -15,28 +15,24 @@
 
   html {
     scroll-behavior: smooth;
-    background-color: #140f0c;
+    background-color: transparent;
   }
 
   body {
-    background-color: #140f0c;
-    background-image: 
-      radial-gradient(circle at 50% 0%, rgba(223, 167, 50, 0.16) 0%, transparent 65%),
-      radial-gradient(circle at 85% 60%, rgba(180, 83, 9, 0.12) 0%, transparent 50%),
-      radial-gradient(circle at 15% 85%, rgba(138, 64, 18, 0.14) 0%, transparent 50%),
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Cfilter id='woodGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.007 0.14' numOctaves='4' stitchTiles='stitch' result='noise'/%3E%3CfeColorMatrix type='matrix' values='0.38 0 0 0 0.17  0 0.26 0 0 0.11  0 0 0.18 0 0.07  0 0 0 0.26 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23woodGrain)'/%3E%3C/svg%3E");
-    background-attachment: fixed;
+    /* TRANSPARENT — lets the fixed canvas wood background show through */
+    background-color: transparent;
     color: #f1f5f9;
     overflow-x: hidden;
     font-family: 'Plus Jakarta Sans', sans-serif;
   }
+
 
   * {
     box-sizing: border-box;
   }
 }
 
-/* ===== CUSTOM KEYFRAME ANIMATIONS ===== */
+
 @keyframes shimmer {
   0% { background-position: -200% center; }
   100% { background-position: 200% center; }
