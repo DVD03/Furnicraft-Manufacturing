@@ -224,8 +224,11 @@ export default function GalleryPage() {
                 {/* Project Image */}
                 <div className="relative h-64 overflow-hidden cursor-pointer" onClick={() => setSelectedProject(project)}>
                   <img
-                    src={project.image}
-                    alt={project.title}
+                    src={project.image || 'https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&q=80&w=800'}
+                    onError={(e) => {
+                      e.target.src = 'https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&q=80&w=800';
+                    }}
+                    alt=""
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-2">

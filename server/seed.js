@@ -103,7 +103,7 @@ export const initialProjects = [
   {
     title: 'Traditional Sculpted Wood Carvings & Decor Sculptures',
     category: 'Accessories & Art',
-    image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=1200',
     description: 'Intricately hand-sculpted wooden wall panels combining Sri Lankan traditional art motifs with contemporary luxury interior aesthetics.',
     material: 'Mara & Ebony Wood, Gold Leaf Accent Finish',
     durationDays: 12,

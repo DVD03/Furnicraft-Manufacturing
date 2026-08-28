@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import logoImg from '../assets/logo.png';
 import { 
   Plus, Trash2, Edit3, Database, RefreshCw, Mail, CheckCircle2, 
   X, Image as ImageIcon, Layers, DollarSign, Clock, ShieldCheck,
@@ -243,8 +244,13 @@ export default function AdminPage() {
       <div className="min-h-screen py-20 px-4 flex items-center justify-center bg-neutral-950">
         <div className="max-w-md w-full p-8 rounded-3xl bg-neutral-900/90 border border-amber-500/40 shadow-2xl space-y-6">
           <div className="text-center space-y-2">
-            <div className="w-14 h-14 mx-auto rounded-2xl bg-amber-500 flex items-center justify-center font-black text-black text-2xl font-serif">
-              F
+            <div className="w-14 h-14 mx-auto rounded-2xl bg-neutral-950 p-1.5 border border-amber-500/50 flex items-center justify-center overflow-hidden shadow-xl">
+              <img 
+                src={logoImg} 
+                onError={(e) => { e.target.src = '/logo.png'; }}
+                alt="Furnicraft Logo" 
+                className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(223,167,50,0.6)]" 
+              />
             </div>
             <h2 className="text-2xl font-extrabold text-white font-serif">Furnicraft Admin Portal</h2>
             <p className="text-xs text-slate-400">Restricted Management Console for Furnicraft Officers</p>
@@ -304,13 +310,18 @@ export default function AdminPage() {
   const pendingQuotations = quotations.filter(q => q.status === 'Pending').length;
 
   return (
-    <div className="min-h-screen py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-8">
+    <div className="min-h-screen pt-32 lg:pt-36 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-8">
       
       {/* Admin Top Control Bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 rounded-3xl bg-neutral-900/90 border border-amber-500/30 shadow-2xl">
-        <div>
-          <span className="text-[10px] font-bold text-amber-400 uppercase tracking-widest block">Furnicraft Manufacturing (Pvt) Ltd</span>
-          <h1 className="text-3xl font-extrabold text-white font-serif">Management Console</h1>
+        <div className="flex items-center space-x-4">
+          <div className="w-12 h-12 rounded-2xl bg-neutral-950 p-1.5 border border-amber-500/40 shadow-lg flex items-center justify-center overflow-hidden">
+            <img src={logoImg} onError={(e) => { e.target.src = '/logo.png'; }} alt="Furnicraft Logo" className="w-full h-full object-contain" />
+          </div>
+          <div>
+            <span className="text-[10px] font-bold text-amber-400 uppercase tracking-widest block">Furnicraft Manufacturing (Pvt) Ltd</span>
+            <h1 className="text-2xl sm:text-3xl font-extrabold text-white font-serif">Management Console</h1>
+          </div>
         </div>
 
         <div className="flex items-center space-x-3">
