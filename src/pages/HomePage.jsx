@@ -81,7 +81,7 @@ const HomePage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-white font-sans overflow-x-hidden relative">
+    <div className="min-h-screen bg-transparent text-white font-sans overflow-x-hidden relative">
 
       {/* Floating Interactive Scroll Progress & Quick Jump Badge */}
       <AnimatePresence>
@@ -197,7 +197,7 @@ const HomePage = () => {
 
             {/* Description */}
             <motion.p variants={fadeUpVariant} className="text-sm sm:text-base md:text-lg text-neutral-400 max-w-xl leading-relaxed">
-              Furnicraft Manufacturing brings 27 years of Sri Lankan heritage into modern luxury spaces. We deliver premium interiors with unmatched guarantees.
+              Creative Living brings 27 years of Sri Lankan heritage into modern luxury spaces. We deliver premium interiors with unmatched guarantees.
             </motion.p>
 
             {/* Stats Cards */}
@@ -454,7 +454,7 @@ const HomePage = () => {
           >
             {[
               { name: 'Dr. Ramesh Fernando', role: 'Villa Owner', quote: 'The 40-day promise seemed impossible, but they delivered flawlessly. The Ceylon teak finish is breathtaking.' },
-              { name: 'Ayesha Perera', role: 'Restaurateur', quote: 'Furnicraft transformed our commercial space. Their chartered architects truly understood our vision and executed it with 100% bank guarantee.' },
+              { name: 'Ayesha Perera', role: 'Restaurateur', quote: 'Creative Living transformed our commercial space. Their chartered architects truly understood our vision and executed it with 100% bank guarantee.' },
               { name: 'Sanjaya Silva', role: 'Corporate Client', quote: 'The level of professionalism and the quality of the joinery work is unmatched in Sri Lanka. Highly recommended.' }
             ].map((test, idx) => (
               <motion.div key={idx} variants={fadeUpVariant} className="backdrop-blur-xl bg-neutral-900/80 border border-white/5 p-8 rounded-2xl relative">
@@ -514,7 +514,7 @@ const HomePage = () => {
         <div className="relative max-w-4xl mx-auto text-center px-4">
           <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-6">Ready to Build Your Dream Interior?</h2>
           <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Experience the perfect blend of tradition and technology with Furnicraft. Secure your project today with our 100% bank guarantee.
+            Experience the perfect blend of tradition and technology with Creative Living. Secure your project today with our 100% bank guarantee.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact" className="px-10 py-5 bg-white text-orange-600 font-bold rounded-full hover:shadow-xl hover:scale-105 transition-all text-lg">

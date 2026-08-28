@@ -15,7 +15,7 @@ export default function App() {
   return (
     <ThemeProvider>
       <Router>
-        <div className="flex flex-col min-h-screen bg-neutral-950 text-slate-100 font-sans selection:bg-amber-500 selection:text-black">
+        <div className="flex flex-col min-h-screen bg-[#140f0c]/85 text-slate-100 font-sans selection:bg-amber-500 selection:text-black">
           <Navbar />
           <main className="flex-grow">
             <Routes>

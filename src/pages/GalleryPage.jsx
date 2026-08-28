@@ -104,7 +104,7 @@ export default function GalleryPage() {
         setQuoteStatus({
           loading: false,
           success: true,
-          message: `Official Quotation #${data.data._id.slice(-6).toUpperCase()} generated! Your estimated price is ~${estimatedPrice} Lakhs (LKR). Furnicraft team will contact you.`
+          message: `Official Quotation #${data.data._id.slice(-6).toUpperCase()} generated! Your estimated price is ~${estimatedPrice} Lakhs (LKR). Creative Living team will contact you.`
         });
       } else {
         setQuoteStatus({ loading: false, success: false, message: data.error || 'Failed to submit quotation' });
@@ -128,7 +128,7 @@ export default function GalleryPage() {
             boxShadow: `0 0 15px ${currentTheme.primary}30`
           }}
         >
-          {currentTheme.badge || 'Furnicraft Portfolio Showcase'}
+          {currentTheme.badge || 'Creative Living Portfolio Showcase'}
         </span>
         <h1 className="text-4xl sm:text-5xl font-extrabold text-white font-serif tracking-tight">
           {activeCategory === 'All' ? 'Interior & Engineering Gallery' : `${activeCategory} Portfolio`}
@@ -487,7 +487,7 @@ export default function GalleryPage() {
                   disabled={quoteStatus.loading}
                   className="w-full py-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-black font-extrabold text-sm shadow-xl"
                 >
-                  {quoteStatus.loading ? 'Calculating & Saving...' : 'Submit Quotation to Furnicraft Admin'}
+                  {quoteStatus.loading ? 'Calculating & Saving...' : 'Submit Quotation to Creative Living Admin'}
                 </button>
               </form>
             )}

@@ -43,7 +43,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-white relative overflow-hidden">
+    <div className="min-h-screen bg-transparent text-white relative overflow-hidden">
       
       {/* HERO SECTION */}
       <section className="relative pt-32 lg:pt-36 pb-28 border-b border-amber-900/30 overflow-hidden">
@@ -76,7 +76,7 @@ export default function AboutPage() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-4xl sm:text-6xl font-black font-serif tracking-tight leading-tight"
           >
-            Furnicraft Manufacturing <br />
+            Creative Living <br />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-300 via-amber-400 to-orange-500 font-sans">
               (Pvt) Ltd
             </span>
@@ -97,7 +97,7 @@ export default function AboutPage() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="text-slate-300 text-sm sm:text-base max-w-3xl mx-auto font-light leading-relaxed"
           >
-            For over 27 years, Furnicraft has stood at the pinnacle of Sri Lankan interior manufacturing, architectural joinery, custom pantries, and luxury resort furniture. Supervised by certified Chartered Architects.
+            For over 27 years, Creative Living has stood at the pinnacle of Sri Lankan interior manufacturing, architectural joinery, custom pantries, and luxury resort furniture. Supervised by certified Chartered Architects.
           </motion.p>
         </div>
       </section>
@@ -157,7 +157,7 @@ export default function AboutPage() {
               27 Years of Ceylon Woodworking Heritage & Engineering
             </h2>
             <p className="text-slate-300 text-sm leading-relaxed font-light">
-              Founded in 1997, Furnicraft Manufacturing began with a singular vision: to combine traditional Sri Lankan wood craftsmanship with modern European precision woodworking technology.
+              Founded in 1997, Creative Living began with a singular vision: to combine traditional Sri Lankan wood craftsmanship with modern European precision woodworking technology.
             </p>
             <p className="text-slate-300 text-sm leading-relaxed font-light">
               Today, our state-of-the-art factory houses automated timber drying kilns, CNC wood routers, edge-banding machinery, and lacquer spraying booths. Every piece of furniture, pantry cabinet, or architectural balustrade undergoes rigorous quality assurance by Chartered Architects.
@@ -189,7 +189,7 @@ export default function AboutPage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/30 to-transparent"></div>
             <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-neutral-950/90 backdrop-blur-md border border-amber-500/40">
-              <span className="text-xs font-bold text-amber-400 uppercase tracking-widest block">Furnicraft Factory</span>
+              <span className="text-xs font-bold text-amber-400 uppercase tracking-widest block">Creative Living Factory</span>
               <span className="text-sm font-semibold text-white">Advanced German & Italian Woodworking Machinery</span>
             </div>
           </motion.div>
@@ -204,7 +204,7 @@ export default function AboutPage() {
           
           <div className="text-center space-y-3 max-w-2xl mx-auto">
             <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">Financial Security & Expertise</span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white font-serif">Why Sri Lankans Choose Furnicraft</h2>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white font-serif">Why Sri Lankans Choose Creative Living</h2>
             <p className="text-xs text-slate-400">Our core guarantees backed by financial security and chartered engineering.</p>
           </div>
 

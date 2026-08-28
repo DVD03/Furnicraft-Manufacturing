@@ -78,10 +78,10 @@ export const themeMap = {
   'All': { 
     key: 'wood', 
     primary: '#dfa732', 
-    badge: 'Furnicraft Signature Masterpieces', 
+    badge: 'Creative Living Signature Masterpieces', 
     glowClass: 'theme-wood', 
     gradient: 'from-amber-400 via-yellow-500 to-orange-500',
-    colorName: 'Furnicraft Signature' 
+    colorName: 'Creative Living Signature' 
   }
 };
 

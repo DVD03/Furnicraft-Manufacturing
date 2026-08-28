@@ -117,7 +117,7 @@ export default function AdminPage() {
   }, [isAuthenticated]);
 
   const handleSeed = async () => {
-    if (!window.confirm('Re-seed database with default Furnicraft sample projects?')) return;
+    if (!window.confirm('Re-seed database with default Creative Living sample projects?')) return;
     setLoading(true);
     try {
       const res = await fetch('/api/seed', { method: 'POST' });
@@ -241,19 +241,19 @@ export default function AdminPage() {
   // IF NOT AUTHENTICATED -> SHOW LOGIN SCREEN
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen py-20 px-4 flex items-center justify-center bg-neutral-950">
+      <div className="min-h-screen py-20 px-4 flex items-center justify-center bg-transparent">
         <div className="max-w-md w-full p-8 rounded-3xl bg-neutral-900/90 border border-amber-500/40 shadow-2xl space-y-6">
           <div className="text-center space-y-2">
             <div className="w-14 h-14 mx-auto rounded-2xl bg-neutral-950 p-1.5 border border-amber-500/50 flex items-center justify-center overflow-hidden shadow-xl">
               <img 
                 src={logoImg} 
                 onError={(e) => { e.target.src = '/logo.png'; }}
-                alt="Furnicraft Logo" 
+                alt="Creative Living Logo" 
                 className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(223,167,50,0.6)]" 
               />
             </div>
-            <h2 className="text-2xl font-extrabold text-white font-serif">Furnicraft Admin Portal</h2>
-            <p className="text-xs text-slate-400">Restricted Management Console for Furnicraft Officers</p>
+            <h2 className="text-2xl font-extrabold text-white font-serif">Creative Living Admin Portal</h2>
+            <p className="text-xs text-slate-400">Restricted Management Console for Creative Living Officers</p>
           </div>
 
           {loginError && (
@@ -292,7 +292,7 @@ export default function AdminPage() {
               className="w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-black font-extrabold text-xs shadow-xl hover:scale-[1.01] transition-all flex items-center justify-center space-x-2"
             >
               <Lock className="w-4 h-4" />
-              <span>Login to Furnicraft Admin</span>
+              <span>Login to Creative Living Admin</span>
             </button>
 
             <p className="text-[10px] text-slate-500 text-center pt-2">
@@ -316,10 +316,10 @@ export default function AdminPage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 rounded-3xl bg-neutral-900/90 border border-amber-500/30 shadow-2xl">
         <div className="flex items-center space-x-4">
           <div className="w-12 h-12 rounded-2xl bg-neutral-950 p-1.5 border border-amber-500/40 shadow-lg flex items-center justify-center overflow-hidden">
-            <img src={logoImg} onError={(e) => { e.target.src = '/logo.png'; }} alt="Furnicraft Logo" className="w-full h-full object-contain" />
+            <img src={logoImg} onError={(e) => { e.target.src = '/logo.png'; }} alt="Creative Living Logo" className="w-full h-full object-contain" />
           </div>
           <div>
-            <span className="text-[10px] font-bold text-amber-400 uppercase tracking-widest block">Furnicraft Manufacturing (Pvt) Ltd</span>
+            <span className="text-[10px] font-bold text-amber-400 uppercase tracking-widest block">Creative Living (Pvt) Ltd</span>
             <h1 className="text-2xl sm:text-3xl font-extrabold text-white font-serif">Management Console</h1>
           </div>
         </div>

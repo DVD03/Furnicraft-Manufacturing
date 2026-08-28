@@ -6,7 +6,7 @@ export default function AIChatbot() {
   const [messages, setMessages] = useState([
     {
       sender: 'bot',
-      text: 'Ayubowan! I am Archie, your Furnicraft AI Architect Assistant. How can I assist you with custom teak furniture, pantry design, or 40-day villa construction today?'
+      text: 'Ayubowan! I am Archie, your Creative Living AI Architect Assistant. How can I assist you with custom teak furniture, pantry design, or 40-day villa construction today?'
     }
   ]);
   const [inputMessage, setInputMessage] = useState('');
@@ -48,7 +48,7 @@ export default function AIChatbot() {
         setMessages([...newMsgs, { sender: 'bot', text: 'I am currently updating my architectural data. Please feel free to call our hotline at +94 77 123 4567!' }]);
       }
     } catch (err) {
-      setMessages([...newMsgs, { sender: 'bot', text: 'Connecting to Furnicraft AI... Call hotline +94 77 123 4567 for instant architectural assistance.' }]);
+      setMessages([...newMsgs, { sender: 'bot', text: 'Connecting to Creative Living AI... Call hotline +94 77 123 4567 for instant architectural assistance.' }]);
     } finally {
       setLoading(false);
     }
@@ -102,7 +102,7 @@ export default function AIChatbot() {
             <span className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-400 rounded-full border-2 border-black animate-pulse"></span>
           </div>
           <span className="hidden sm:inline-block font-extrabold text-xs tracking-wide uppercase pr-1 text-black">
-            Furnicraft AI
+            Creative Living AI
           </span>
         </button>
       )}
@@ -119,7 +119,7 @@ export default function AIChatbot() {
               </div>
               <div>
                 <h4 className="text-white font-bold text-sm flex items-center space-x-1.5">
-                  <span>Archie • Furnicraft AI</span>
+                  <span>Archie • Creative Living AI</span>
                   <span className="px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 text-[9px]">Architect</span>
                 </h4>
                 <span className="text-[10px] text-emerald-400 font-medium flex items-center">

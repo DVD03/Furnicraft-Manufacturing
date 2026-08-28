@@ -67,7 +67,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-neutral-950 text-neutral-300 overflow-hidden">
+    <footer className="relative bg-[#120e0b]/90 text-neutral-300 overflow-hidden border-t border-amber-500/20">
 
       {/* ── Gold gradient top border ── */}
       <div className="h-[3px] w-full bg-gradient-to-r from-transparent via-amber-400 to-transparent" />
@@ -113,14 +113,14 @@ export default function Footer() {
           {/* F emblem + name */}
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-xl bg-neutral-950 p-1 border border-amber-500/40 shadow-lg flex items-center justify-center overflow-hidden">
-              <img src={logoImg} onError={(e) => { e.target.src = '/logo.png'; }} alt="Furnicraft Logo" className="w-full h-full object-contain" />
+              <img src={logoImg} onError={(e) => { e.target.src = '/logo.png'; }} alt="Creative Living Logo" className="w-full h-full object-contain" />
             </div>
             <div>
               <p className="text-[10px] font-semibold tracking-[0.18em] text-amber-400 uppercase leading-tight">
-                Furnicraft
+                Creative Living
               </p>
               <p className="text-[9px] tracking-[0.12em] text-neutral-500 uppercase leading-tight">
-                Manufacturing (Pvt) Ltd
+                Engineering & Interior (Pvt) Ltd
               </p>
             </div>
           </div>
@@ -133,7 +133,7 @@ export default function Footer() {
 
           {/* Description */}
           <p className="text-xs text-neutral-500 leading-relaxed">
-            Furnicraft has been Sri Lanka's benchmark for premium furniture manufacturing since 1997 —
+            Creative Living has been Sri Lanka's benchmark for premium furniture manufacturing since 1997 —
             blending timeless artisanship with contemporary design for the modern home.
           </p>
 
@@ -218,11 +218,11 @@ export default function Footer() {
             {/* Email */}
             <li>
               <a
-                href="mailto:info@furnicraft.lk"
+                href="mailto:info@creativeliving.lk"
                 className="flex items-center gap-3 group text-sm text-neutral-400 hover:text-amber-400 transition-colors duration-200"
               >
                 <Mail size={15} className="text-amber-500 group-hover:scale-110 transition-transform shrink-0" />
-                info@furnicraft.lk
+                info@creativeliving.lk
               </a>
             </li>
 
@@ -260,7 +260,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-[11px] text-neutral-600">
             &copy; {year}&nbsp;
-            <span className="text-neutral-500 font-medium">Furnicraft Manufacturing (Pvt) Ltd.</span>
+            <span className="text-neutral-500 font-medium">Creative Living (Pvt) Ltd.</span>
             &nbsp;All rights reserved.
           </p>
           <p className="text-[11px] text-neutral-600 italic tracking-wide">

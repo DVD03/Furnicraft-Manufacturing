@@ -310,7 +310,7 @@ function DetailCard({ category, index }) {
 ───────────────────────────────────────────── */
 export default function CategoriesPage() {
   return (
-    <div className="min-h-screen bg-neutral-950 text-white overflow-x-hidden">
+    <div className="min-h-screen bg-transparent text-white overflow-x-hidden">
 
       {/* ── Decorative ambient blobs ── */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden z-0">
@@ -334,7 +334,7 @@ export default function CategoriesPage() {
             custom={0}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-            <span className="text-amber-400 text-xs font-bold tracking-widest uppercase">Furnicraft Manufacturing · Specializations</span>
+            <span className="text-amber-400 text-xs font-bold tracking-widest uppercase">Creative Living · Specializations</span>
           </motion.div>
 
           {/* Animated Title */}
@@ -458,7 +458,7 @@ export default function CategoriesPage() {
                 </span>
               </h2>
               <p className="text-neutral-400 text-sm md:text-base max-w-xl mx-auto mb-10 leading-relaxed">
-                Connect with Furnicraft's design consultants today. Get a detailed quote, 3D visualization, and project timeline — completely free.
+                Connect with Creative Living's design consultants today. Get a detailed quote, 3D visualization, and project timeline — completely free.
               </p>
 
               {/* Buttons */}

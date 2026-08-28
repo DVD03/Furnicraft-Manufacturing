@@ -54,7 +54,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-white relative overflow-hidden pt-32 lg:pt-36 pb-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-transparent text-white relative overflow-hidden pt-32 lg:pt-36 pb-16 px-4 sm:px-6 lg:px-8">
       
       {/* Ambient background lighting */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-amber-500/10 blur-[130px] pointer-events-none" />
@@ -68,7 +68,7 @@ export default function ContactPage() {
             animate={{ opacity: 1, y: 0 }}
             className="px-4 py-1.5 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold border border-amber-500/30 uppercase tracking-widest inline-block"
           >
-            Connect With Furnicraft
+            Connect With Creative Living
           </motion.span>
 
           <motion.h1 
@@ -274,7 +274,7 @@ export default function ContactPage() {
           >
             <div className="space-y-2">
               <span className="text-xs font-bold text-amber-400 uppercase tracking-widest block">Showroom Locations</span>
-              <h2 className="text-2xl font-bold font-serif text-white">Visit Furnicraft Centers</h2>
+              <h2 className="text-2xl font-bold font-serif text-white">Visit Creative Living Centers</h2>
             </div>
 
             {/* Colombo Showroom */}

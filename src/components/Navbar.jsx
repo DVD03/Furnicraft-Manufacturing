@@ -46,8 +46,8 @@ export default function Navbar() {
         className={[
           'fixed top-0 left-0 right-0 z-50 flex flex-col',
           'transition-all duration-500 ease-in-out',
-          'border-b border-white/5 backdrop-blur-xl',
-          scrolled ? 'bg-neutral-950/95 shadow-2xl' : 'bg-neutral-950/80',
+          'border-b border-amber-500/10 backdrop-blur-xl',
+          scrolled ? 'bg-[#18120e]/95 shadow-2xl shadow-black/80' : 'bg-[#18120e]/80',
         ].join(' ')}
       >
         {/* ── Top micro-bar (desktop only, hidden when scrolled) ── */}
@@ -91,12 +91,12 @@ export default function Navbar() {
               <img 
                 src={logoImg} 
                 onError={(e) => { e.target.src = '/logo.png'; }}
-                alt="Furnicraft Logo" 
+                alt="Creative Living Logo" 
                 className="w-full h-full object-contain filter drop-shadow-[0_0_6px_rgba(223,167,50,0.6)]" 
               />
             </div>
             <div className="flex flex-col leading-tight">
-              <span className="text-white font-extrabold text-sm sm:text-base tracking-[0.18em] uppercase font-serif">FURNICRAFT</span>
+              <span className="text-white font-extrabold text-sm sm:text-base tracking-[0.18em] uppercase font-serif">CREATIVE LIVING</span>
               <span className="text-amber-400/90 text-[9px] tracking-[0.22em] uppercase font-bold">Engineering & Interior</span>
             </div>
           </Link>
