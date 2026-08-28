@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence, useScroll, useSpring, useTransform } from 'framer-motion';
 import { ShieldCheck, PhoneCall, LayoutDashboard, Award, ChevronRight, Menu, X } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
-import logoImg from '../assets/logo.png';
+import Logo from './Logo';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -85,20 +85,9 @@ export default function Navbar() {
         {/* ── Main nav row ── */}
         <nav className="flex-1 flex items-center px-4 md:px-6 max-w-7xl mx-auto w-full gap-4 py-3">
 
-          {/* Logo with official logo.png */}
-          <Link to="/" className="flex items-center gap-3 flex-shrink-0 group">
-            <div className="w-10 h-10 rounded-xl bg-neutral-950 p-1 border border-amber-500/40 shadow-lg group-hover:scale-105 transition-transform flex items-center justify-center overflow-hidden">
-              <img 
-                src={logoImg} 
-                onError={(e) => { e.target.src = '/logo.png'; }}
-                alt="Creative Living Logo" 
-                className="w-full h-full object-contain filter drop-shadow-[0_0_6px_rgba(223,167,50,0.6)]" 
-              />
-            </div>
-            <div className="flex flex-col leading-tight">
-              <span className="text-white font-extrabold text-sm sm:text-base tracking-[0.18em] uppercase font-serif">CREATIVE LIVING</span>
-              <span className="text-amber-400/90 text-[9px] tracking-[0.22em] uppercase font-bold">Engineering & Interior</span>
-            </div>
+          {/* Official Full Brand Logo */}
+          <Link to="/" className="flex items-center flex-shrink-0 py-0.5">
+            <Logo size="md" />
           </Link>
 
           {/* Spacer */}

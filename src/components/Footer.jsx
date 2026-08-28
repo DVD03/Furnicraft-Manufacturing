@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logoImg from '../assets/logo.png';
+import Logo from './Logo';
 import {
   ShieldCheck,
   Phone,
@@ -110,20 +110,10 @@ export default function Footer() {
 
         {/* ── Col 1 · Brand ── */}
         <div className="lg:col-span-1 space-y-5">
-          {/* F emblem + name */}
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-xl bg-neutral-950 p-1 border border-amber-500/40 shadow-lg flex items-center justify-center overflow-hidden">
-              <img src={logoImg} onError={(e) => { e.target.src = '/logo.png'; }} alt="Creative Living Logo" className="w-full h-full object-contain" />
-            </div>
-            <div>
-              <p className="text-[10px] font-semibold tracking-[0.18em] text-amber-400 uppercase leading-tight">
-                Creative Living
-              </p>
-              <p className="text-[9px] tracking-[0.12em] text-neutral-500 uppercase leading-tight">
-                Engineering & Interior (Pvt) Ltd
-              </p>
-            </div>
-          </div>
+          {/* Brand Logo */}
+          <Link to="/" className="inline-block">
+            <Logo size="md" />
+          </Link>
 
           {/* Tagline */}
           <p className="text-base font-semibold text-white leading-snug">

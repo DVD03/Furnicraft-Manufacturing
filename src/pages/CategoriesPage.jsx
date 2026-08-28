@@ -1,16 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Trees, Gem, ChefHat, Hotel, Building2, Flower2, CheckCircle } from 'lucide-react';
+import { 
+  ArrowRight, Home, Building2, Hotel, Armchair, 
+  Layers, Hammer, Cpu, Paintbrush, ClipboardCheck, CheckCircle 
+} from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
 /* ─────────────────────────────────────────────
-   CATEGORIES DATA
+   OFFICIAL 9 COMPANY SPECIALIZATIONS
 ───────────────────────────────────────────── */
 const categories = [
   {
-    name: 'Wood & Timber',
-    icon: Trees,
+    name: 'Residential Interior Design',
+    subtitle: 'Creating stunning, functional, and luxurious living spaces.',
+    icon: Home,
     accentColor: 'amber',
     borderClass: 'border-amber-500/40 hover:border-amber-400',
     iconClass: 'text-amber-400',
@@ -19,15 +23,22 @@ const categories = [
     gradientFrom: 'from-amber-500',
     gradientTo: 'to-yellow-600',
     ringClass: 'ring-amber-500/50',
-    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=800',
-    desc: 'Handcrafted Ceylon Teak & Mahogany furniture with traditional Sri Lankan craftsmanship',
-    products: ['Ceylon Teak Furniture', 'Mahogany Wardrobes', 'Custom Teak Pantry', 'Timber Wall Paneling'],
-    price: 'From 15 Lakhs',
+    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800',
+    products: [
+      'Luxury Home Interiors – High-end designs with bespoke furniture.',
+      'Modern & Minimalist Spaces – Clean layouts and smart storage solutions.',
+      'Traditional & Heritage Interiors – Timeless aesthetics with rich craftsmanship.',
+      'Apartment & Condo Interiors – Maximizing small spaces with efficiency.',
+      'Villa & Penthouse Designs – Grand layouts with customized luxury elements.',
+      'Smart Home Integrations – Automated lighting, security, and climate control.'
+    ],
+    price: 'Bespoke Quote',
     leadTime: '30-45 Days',
   },
   {
-    name: 'Glass & Mirror',
-    icon: Gem,
+    name: 'Commercial Interior Design',
+    subtitle: 'Enhancing business spaces for productivity and brand identity.',
+    icon: Building2,
     accentColor: 'cyan',
     borderClass: 'border-cyan-500/40 hover:border-cyan-400',
     iconClass: 'text-cyan-400',
@@ -36,31 +47,21 @@ const categories = [
     gradientFrom: 'from-cyan-500',
     gradientTo: 'to-sky-600',
     ringClass: 'ring-cyan-500/50',
-    image: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&q=80&w=800',
-    desc: '12mm tempered glass balustrades, mirror walls, and glass partition systems',
-    products: ['Tempered Glass Balustrades', 'Mirror Feature Walls', 'Glass Partitions', 'Shower Enclosures'],
-    price: 'From 8 Lakhs',
-    leadTime: '21-30 Days',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800',
+    products: [
+      'Corporate Office Design – Open workspaces & ergonomic furniture.',
+      'Coworking & Business Hubs – Innovative dynamic layouts.',
+      'Retail Store Interiors – Optimized customer engagement & merchandising.',
+      'Showroom & Exhibition Spaces – Strategic product display layouts.',
+      'Wellness & Healthcare Clinics – Modern, clean, and calming spaces.',
+      'Banking & Financial Institutions – Professional and secure interiors.'
+    ],
+    price: 'Corporate Rates',
+    leadTime: '30-60 Days',
   },
   {
-    name: 'Pantry & Kitchen',
-    icon: ChefHat,
-    accentColor: 'yellow',
-    borderClass: 'border-yellow-500/40 hover:border-yellow-400',
-    iconClass: 'text-yellow-400',
-    bgClass: 'bg-yellow-500/10',
-    glowClass: 'shadow-yellow-500/30',
-    gradientFrom: 'from-yellow-500',
-    gradientTo: 'to-orange-500',
-    ringClass: 'ring-yellow-500/50',
-    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=80&w=800',
-    desc: 'Italian quartz countertops, acrylic cabinet fronts, and modular kitchen systems',
-    products: ['Italian Quartz Tops', 'Acrylic Cabinet Fronts', 'Modular Kitchen Systems', 'Custom Island Units'],
-    price: 'From 20 Lakhs',
-    leadTime: '35-45 Days',
-  },
-  {
-    name: 'Hotel Furniture',
+    name: 'Hospitality & Leisure Design',
+    subtitle: 'Crafting immersive experiences through design excellence.',
     icon: Hotel,
     accentColor: 'rose',
     borderClass: 'border-rose-500/40 hover:border-rose-400',
@@ -71,31 +72,42 @@ const categories = [
     gradientTo: 'to-pink-600',
     ringClass: 'ring-rose-500/50',
     image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&q=80&w=800',
-    desc: 'Luxury resort villa and suite furniture for boutique hotels and resorts',
-    products: ['Resort Villa Furniture', 'Suite Wardrobes & Beds', 'Lobby Fit-outs', 'Restaurant Seating'],
-    price: 'From 50 Lakhs',
-    leadTime: '45-60 Days',
+    products: [
+      'Hotel & Resort Interiors – Elegant lobbies, suites, and guest rooms.',
+      'Restaurant & Café Design – Ambient themed interiors.',
+      'Bars & Nightclubs – Trendy, vibrant, and experience-driven setups.',
+      'Spas & Wellness Centers – Serene, rejuvenating environments.',
+      'Event & Banquet Spaces – Grand setups for special occasions.'
+    ],
+    price: 'Turnkey Resort',
+    leadTime: '45-90 Days',
   },
   {
-    name: 'Construction & Architecture',
-    icon: Building2,
-    accentColor: 'orange',
-    borderClass: 'border-orange-500/40 hover:border-orange-400',
-    iconClass: 'text-orange-400',
-    bgClass: 'bg-orange-500/10',
-    glowClass: 'shadow-orange-500/30',
-    gradientFrom: 'from-orange-500',
-    gradientTo: 'to-red-600',
-    ringClass: 'ring-orange-500/50',
-    image: 'https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&q=80&w=800',
-    desc: '40 Days / 40 Lakhs signature villa build package on 10-perch land plots (1750 sqft)',
-    products: ['40 Days Villa Build (1750 sqft)', 'Architectural 3D Drawings', 'Interior Fit-out Packages', 'Bank Guarantee Included'],
-    price: 'From 40 Lakhs',
-    leadTime: '40 Days',
+    name: 'Custom Furniture & Bespoke Solutions',
+    subtitle: 'Personalized, high-quality furniture designs tailored to clients’ needs.',
+    icon: Armchair,
+    accentColor: 'yellow',
+    borderClass: 'border-yellow-500/40 hover:border-yellow-400',
+    iconClass: 'text-yellow-400',
+    bgClass: 'bg-yellow-500/10',
+    glowClass: 'shadow-yellow-500/30',
+    gradientFrom: 'from-yellow-500',
+    gradientTo: 'to-amber-600',
+    ringClass: 'ring-yellow-500/50',
+    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=800',
+    products: [
+      'Luxury Custom Furniture – Sofas, beds, dining tables & statement pieces.',
+      'Modular & Space-Saving Furniture – Smart storage & convertible designs.',
+      'Office & Commercial Furniture – Workstations & ergonomic seating.',
+      'Eco-Friendly & Sustainable Materials – Reclaimed Ceylon teak & hardwood.'
+    ],
+    price: 'Custom Built',
+    leadTime: '21-35 Days',
   },
   {
-    name: 'Outdoor Furniture',
-    icon: Flower2,
+    name: 'Smart Space Planning & 3D Visualization',
+    subtitle: 'Visualizing spaces with precision before construction begins.',
+    icon: Layers,
     accentColor: 'emerald',
     borderClass: 'border-emerald-500/40 hover:border-emerald-400',
     iconClass: 'text-emerald-400',
@@ -104,11 +116,105 @@ const categories = [
     gradientFrom: 'from-emerald-500',
     gradientTo: 'to-green-600',
     ringClass: 'ring-emerald-500/50',
-    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=800',
-    desc: 'All-weather teak patio sets, garden decking, and pergola structures',
-    products: ['Teak Patio Dining Sets', 'Garden Decking', 'Pergola Structures', 'Outdoor Loungers'],
-    price: 'From 10 Lakhs',
-    leadTime: '21-30 Days',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800',
+    products: [
+      'Architectural Layout Optimization – Maximizing space efficiency.',
+      '3D Rendering & Virtual Walkthroughs – Ultra-realistic project previews.',
+      'Lighting & Ceiling Design – Custom LED, chandeliers & false ceilings.',
+      'Flooring & Wall Finishes – Hardwood, marble, feature walls & wallpapers.'
+    ],
+    price: 'Free Consultation',
+    leadTime: '7-14 Days',
+  },
+  {
+    name: 'Renovation & Makeovers',
+    subtitle: 'Transforming existing spaces into modern architectural masterpieces.',
+    icon: Hammer,
+    accentColor: 'orange',
+    borderClass: 'border-orange-500/40 hover:border-orange-400',
+    iconClass: 'text-orange-400',
+    bgClass: 'bg-orange-500/10',
+    glowClass: 'shadow-orange-500/30',
+    gradientFrom: 'from-orange-500',
+    gradientTo: 'to-red-600',
+    ringClass: 'ring-orange-500/50',
+    image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800',
+    products: [
+      'Home & Apartment Renovations – Complete layout & interior updates.',
+      'Office & Commercial Space Revamps – Enhancing aesthetics & functionality.',
+      'Retail & Hospitality Upgrades – Modernizing customer engagement areas.',
+      'Historic & Heritage Property Restoration – Preserving classic architecture.'
+    ],
+    price: '40 Days Package',
+    leadTime: '30-40 Days',
+  },
+  {
+    name: 'Home Automation & Smart Living Solutions',
+    subtitle: 'Enhancing convenience and security through cutting-edge technology.',
+    icon: Cpu,
+    accentColor: 'sky',
+    borderClass: 'border-sky-500/40 hover:border-sky-400',
+    iconClass: 'text-sky-400',
+    bgClass: 'bg-sky-500/10',
+    glowClass: 'shadow-sky-500/30',
+    gradientFrom: 'from-sky-500',
+    gradientTo: 'to-blue-600',
+    ringClass: 'ring-sky-500/50',
+    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=800',
+    products: [
+      'Smart Lighting & Climate Control – Automated ambient comfort.',
+      'Voice-Controlled Home Systems – Alexa, Google Assistant & IoT integration.',
+      'Security & Surveillance – Smart locks, IP cameras & motion sensors.',
+      'Automated Curtains & Blinds – Remote & scheduled motor control.',
+      'Entertainment & Media Rooms – High-tech home theaters & immersive audio.'
+    ],
+    price: 'Smart Tech',
+    leadTime: '14-28 Days',
+  },
+  {
+    name: 'Interior Branding & Concept Development',
+    subtitle: 'Aligning interior spaces with brand identity and customer experience.',
+    icon: Paintbrush,
+    accentColor: 'violet',
+    borderClass: 'border-violet-500/40 hover:border-violet-400',
+    iconClass: 'text-violet-400',
+    bgClass: 'bg-violet-500/10',
+    glowClass: 'shadow-violet-500/30',
+    gradientFrom: 'from-violet-500',
+    gradientTo: 'to-purple-600',
+    ringClass: 'ring-violet-500/50',
+    image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&q=80&w=800',
+    products: [
+      'Retail Store Branding & Concepts – Enhancing brand storytelling.',
+      'Corporate Identity Integration – Office interiors reflecting core values.',
+      'Hospitality Experience Design – Unique identities for hotels & cafes.',
+      'Color Psychology & Signage Solutions – Immersive brand elements.'
+    ],
+    price: 'Brand Package',
+    leadTime: '14-30 Days',
+  },
+  {
+    name: 'Project Management & Consultation',
+    subtitle: 'Ensuring seamless execution from initial concept to final handover.',
+    icon: ClipboardCheck,
+    accentColor: 'emerald',
+    borderClass: 'border-emerald-500/40 hover:border-emerald-400',
+    iconClass: 'text-emerald-400',
+    bgClass: 'bg-emerald-500/10',
+    glowClass: 'shadow-emerald-500/30',
+    gradientFrom: 'from-emerald-500',
+    gradientTo: 'to-teal-600',
+    ringClass: 'ring-emerald-500/50',
+    image: 'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&q=80&w=800',
+    products: [
+      'End-to-End Project Coordination – Managing budgets, timelines & vendors.',
+      'On-Site Supervision & Quality Control – Strict construction monitoring.',
+      'Vendor & Supplier Management – Sourcing top-tier materials.',
+      'Cost & Risk Management – Preventing overruns & optimizing efficiency.',
+      'Sustainability Consulting – Eco-conscious construction advice.'
+    ],
+    price: 'Full Oversight',
+    leadTime: 'Full Duration',
   },
 ];
 
@@ -116,35 +222,17 @@ const categories = [
    ANIMATION VARIANTS
 ───────────────────────────────────────────── */
 const fadeUp = {
-  hidden: { opacity: 0, y: 48 },
+  hidden: { opacity: 0, y: 40 },
   visible: (i = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] },
   }),
-};
-
-const slideLeft = {
-  hidden: { opacity: 0, x: -72 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
-  },
-};
-
-const slideRight = {
-  hidden: { opacity: 0, x: 72 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
-  },
 };
 
 const staggerContainer = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } },
+  visible: { transition: { staggerChildren: 0.1 } },
 };
 
 /* ─────────────────────────────────────────────
@@ -155,7 +243,7 @@ function HeroGridCard({ category, index }) {
 
   return (
     <Link 
-      to="/gallery" 
+      to="/contact" 
       onClick={() => setCategoryTheme?.(category.name)}
       className="block"
     >
@@ -163,42 +251,28 @@ function HeroGridCard({ category, index }) {
         className={`relative group overflow-hidden rounded-2xl h-72 md:h-80 border ${category.borderClass} cursor-pointer transition-all duration-500`}
         variants={fadeUp}
         custom={index}
-        whileHover={{ scale: 1.03, boxShadow: '0 25px 60px -10px rgba(0,0,0,0.6)' }}
-        style={{ willChange: 'transform' }}
+        whileHover={{ scale: 1.02, boxShadow: '0 20px 50px -10px rgba(0,0,0,0.6)' }}
       >
-        {/* Background image */}
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
           style={{ backgroundImage: `url(${category.image})` }}
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/20 transition-opacity duration-500 group-hover:opacity-70" />
+        <div className={`absolute inset-0 bg-gradient-to-t ${category.gradientFrom} opacity-0 group-hover:opacity-15 transition-opacity duration-500`} />
 
-        {/* Default dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10 transition-opacity duration-500 group-hover:opacity-60" />
-
-        {/* Hover color tint */}
-        <div className={`absolute inset-0 bg-gradient-to-t ${category.gradientFrom} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
-
-        {/* Colored border glow on hover */}
-        <div className={`absolute inset-0 rounded-2xl ring-0 group-hover:ring-2 ${category.ringClass} transition-all duration-500`} />
-
-        {/* Category Pill Tag */}
-        <div className={`absolute top-4 left-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full ${category.bgClass} backdrop-blur-sm border border-white/10`}>
+        <div className={`absolute top-4 left-4 flex items-center px-3 py-1.5 rounded-full ${category.bgClass} backdrop-blur-sm border border-white/10`}>
           <span className="text-xs font-semibold text-white/90 tracking-wide">{category.name}</span>
         </div>
 
-        {/* Bottom content — always visible title, description on hover */}
-        <div className="absolute bottom-0 left-0 right-0 p-5 flex flex-col gap-2">
-          <h3 className="text-white font-bold text-lg leading-tight drop-shadow-lg">{category.name}</h3>
-
-          {/* Revealed on hover */}
-          <p className="text-white/75 text-xs leading-relaxed max-h-0 overflow-hidden group-hover:max-h-20 transition-all duration-500 ease-in-out">
-            {category.desc}
-          </p>
-          <div className="translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-75">
-            <span
-              className={`inline-flex items-center gap-1.5 text-xs font-semibold ${category.iconClass} hover:underline`}
-            >
-              View Projects <ArrowRight size={13} />
+        <div className="absolute bottom-0 left-0 right-0 p-5 flex flex-col gap-1.5">
+          <h3 className="text-white font-extrabold text-lg sm:text-xl leading-tight drop-shadow-md">{category.name}</h3>
+          <p className="text-neutral-300 text-xs leading-relaxed line-clamp-2">{category.subtitle}</p>
+          <div className="pt-2 flex items-center justify-between">
+            <span className={`text-xs font-bold ${category.iconClass} inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform`}>
+              Consult Architect <ArrowRight size={13} />
+            </span>
+            <span className="text-[10px] text-neutral-400 font-semibold px-2 py-0.5 rounded bg-white/10">
+              {category.leadTime}
             </span>
           </div>
         </div>
@@ -208,45 +282,38 @@ function HeroGridCard({ category, index }) {
 }
 
 /* ─────────────────────────────────────────────
-   DETAIL CARD (alternating layout)
+   DETAIL CARD
 ───────────────────────────────────────────── */
 function DetailCard({ category, index }) {
-  const isEven = index % 2 === 0; // even → image left, text right
+  const isEven = index % 2 === 0;
 
   const textContent = (
     <motion.div
-      className="flex flex-col justify-center gap-6 py-4"
-      variants={isEven ? slideRight : slideLeft}
+      className="flex flex-col justify-center gap-5 py-4"
+      variants={fadeUp}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.25 }}
+      viewport={{ once: true, amount: 0.2 }}
     >
-      {/* Icon + Title */}
-      <div className="flex items-center gap-4">
-        <div className={`p-3.5 rounded-2xl ${category.bgClass} border border-white/10 shadow-lg ${category.glowClass} shadow-lg`}>
-          <category.icon size={28} className={category.iconClass} />
-        </div>
-        <div>
-          <p className={`text-xs font-bold uppercase tracking-widest ${category.iconClass} mb-0.5`}>Category 0{index + 1}</p>
-          <h3 className="text-white text-2xl font-bold leading-tight">{category.name}</h3>
-        </div>
+      <div>
+        <p className={`text-xs font-bold uppercase tracking-widest ${category.iconClass} mb-0.5`}>
+          Specialization 0{index + 1}
+        </p>
+        <h3 className="text-white text-2xl font-extrabold leading-tight">{category.name}</h3>
       </div>
 
-      {/* Description */}
-      <p className="text-neutral-400 text-sm leading-relaxed">{category.desc}</p>
+      <p className="text-neutral-300 text-sm italic font-medium leading-relaxed">{category.subtitle}</p>
 
-      {/* Products list */}
-      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+      <ul className="space-y-2.5">
         {category.products.map((product) => (
-          <li key={product} className="flex items-start gap-2">
-            <CheckCircle size={15} className={`${category.iconClass} mt-0.5 flex-shrink-0`} />
-            <span className="text-neutral-300 text-sm">{product}</span>
+          <li key={product} className="flex items-start gap-2.5">
+            <CheckCircle size={16} className={`${category.iconClass} mt-0.5 flex-shrink-0`} />
+            <span className="text-neutral-300 text-sm leading-snug">{product}</span>
           </li>
         ))}
       </ul>
 
-      {/* Price + Lead Time + CTA */}
-      <div className="flex flex-wrap items-center gap-3 pt-1">
+      <div className="flex flex-wrap items-center gap-3 pt-2">
         <span className={`px-4 py-1.5 rounded-full text-xs font-bold ${category.bgClass} ${category.iconClass} border border-white/10`}>
           {category.price}
         </span>
@@ -254,11 +321,10 @@ function DetailCard({ category, index }) {
           ⏱ {category.leadTime}
         </span>
         <Link
-          to="/gallery"
-          onClick={() => setCategoryTheme?.(category.name)}
-          className={`ml-auto inline-flex items-center gap-1.5 text-xs font-bold ${category.iconClass} hover:underline group`}
+          to="/contact"
+          className={`ml-auto inline-flex items-center gap-1.5 text-xs font-bold px-4 py-2 rounded-xl bg-white/10 text-white hover:bg-amber-500 hover:text-black transition-all duration-300 group`}
         >
-          Explore Gallery
+          Request Proposal
           <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
         </Link>
       </div>
@@ -267,11 +333,11 @@ function DetailCard({ category, index }) {
 
   const imageContent = (
     <motion.div
-      className="relative overflow-hidden rounded-2xl h-64 md:h-80"
-      variants={isEven ? slideLeft : slideRight}
+      className="relative overflow-hidden rounded-2xl h-72 md:h-96 border border-white/10 shadow-2xl"
+      variants={fadeUp}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.25 }}
+      viewport={{ once: true, amount: 0.2 }}
     >
       <img
         src={category.image}
@@ -279,17 +345,12 @@ function DetailCard({ category, index }) {
         className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
         loading="lazy"
       />
-      {/* gradient tint */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${category.gradientFrom}/10 ${category.gradientTo}/5`} />
-      {/* subtle border glow */}
-      <div className={`absolute inset-0 rounded-2xl ring-1 ${category.ringClass}`} />
+      <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent`} />
     </motion.div>
   );
 
   return (
-    <div
-      className={`grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 items-center py-10 border-b border-white/5 last:border-none`}
-    >
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center py-12 border-b border-white/10 last:border-none">
       {isEven ? (
         <>
           {imageContent}
@@ -312,32 +373,27 @@ export default function CategoriesPage() {
   return (
     <div className="min-h-screen bg-transparent text-white overflow-x-hidden">
 
-      {/* ── Decorative ambient blobs ── */}
+      {/* Decorative ambient lighting */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden z-0">
-        <div className="absolute -top-48 -left-48 w-[600px] h-[600px] rounded-full bg-amber-500/5 blur-3xl" />
-        <div className="absolute top-1/3 -right-64 w-[700px] h-[700px] rounded-full bg-cyan-500/5 blur-3xl" />
-        <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] rounded-full bg-rose-500/5 blur-3xl" />
+        <div className="absolute -top-48 -left-48 w-[600px] h-[600px] rounded-full bg-amber-500/10 blur-3xl" />
+        <div className="absolute top-1/3 -right-64 w-[700px] h-[700px] rounded-full bg-cyan-500/10 blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* ══════════════════════════════════════════
-            SECTION 1 — PAGE HERO
-        ══════════════════════════════════════════ */}
+        {/* Hero Section */}
         <section className="pt-36 lg:pt-40 pb-16 text-center">
-          {/* Badge */}
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 mb-6"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 mb-6"
             variants={fadeUp}
             initial="hidden"
             animate="visible"
             custom={0}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-            <span className="text-amber-400 text-xs font-bold tracking-widest uppercase">Creative Living · Specializations</span>
+            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+            <span className="text-amber-400 text-xs font-extrabold tracking-widest uppercase">Creative Living · Official Profile</span>
           </motion.div>
 
-          {/* Animated Title */}
           <motion.h1
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] mb-6"
             variants={fadeUp}
@@ -345,44 +401,28 @@ export default function CategoriesPage() {
             animate="visible"
             custom={1}
           >
-            <span className="text-white">Explore Our</span>
+            <span className="text-white">Our 9 Core Architectural</span>
             <br />
             <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent">
-              Specializations
+              & Interior Specializations
             </span>
           </motion.h1>
 
-          {/* Subtitle */}
           <motion.p
-            className="max-w-2xl mx-auto text-neutral-400 text-base md:text-lg leading-relaxed"
+            className="max-w-3xl mx-auto text-neutral-300 text-base md:text-lg leading-relaxed"
             variants={fadeUp}
             initial="hidden"
             animate="visible"
             custom={2}
           >
-            From bespoke teak masterpieces to full villa builds — six world-class categories crafted for Sri Lanka's finest residences, hotels, and commercial spaces.
+            From luxury residential villas and commercial offices to custom bespoke Ceylon teak furniture, smart home automation, and 3D space visualization — explore Creative Living's complete official service portfolio.
           </motion.p>
-
-          {/* Decorative divider */}
-          <motion.div
-            className="mt-10 flex items-center justify-center gap-4"
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            custom={3}
-          >
-            <div className="h-px w-24 bg-gradient-to-r from-transparent to-amber-500/60" />
-            <div className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-            <div className="h-px w-24 bg-gradient-to-l from-transparent to-amber-500/60" />
-          </motion.div>
         </section>
 
-        {/* ══════════════════════════════════════════
-            SECTION 2 — HERO IMAGE GRID (3×2)
-        ══════════════════════════════════════════ */}
+        {/* 9 Grid Overview */}
         <section className="pb-24">
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
@@ -393,102 +433,40 @@ export default function CategoriesPage() {
           </motion.div>
         </section>
 
-        {/* ══════════════════════════════════════════
-            SECTION 3 — DETAIL CARDS (alternating)
-        ══════════════════════════════════════════ */}
+        {/* Comprehensive Breakdown */}
         <section className="pb-24">
-          {/* Section header */}
-          <motion.div
-            className="text-center mb-16"
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <p className="text-amber-400 text-xs font-bold uppercase tracking-widest mb-3">In Depth</p>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white">
-              What We Craft for You
+          <div className="text-center mb-16">
+            <p className="text-amber-400 text-xs font-bold uppercase tracking-widest mb-3">Official Service Catalog</p>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white">
+              Comprehensive Service Breakdown
             </h2>
-            <p className="mt-3 text-neutral-500 text-sm max-w-lg mx-auto">
-              Every category represents years of mastery, premium materials, and a commitment to uncompromising quality.
-            </p>
-          </motion.div>
+          </div>
 
-          {/* Alternating detail cards */}
-          <div className="divide-y divide-white/5">
+          <div className="divide-y divide-white/10">
             {categories.map((cat, i) => (
               <DetailCard key={cat.name} category={cat} index={i} />
             ))}
           </div>
         </section>
 
-        {/* ══════════════════════════════════════════
-            SECTION 4 — FINAL CTA
-        ══════════════════════════════════════════ */}
+        {/* CTA */}
         <section className="pb-28">
           <motion.div
-            className="relative overflow-hidden rounded-3xl p-10 md:p-16 text-center border border-amber-500/20"
-            style={{
-              background: 'linear-gradient(135deg, rgba(217,119,6,0.15) 0%, rgba(161,98,7,0.08) 40%, rgba(10,10,10,0.9) 100%)',
-            }}
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            className="relative overflow-hidden rounded-3xl p-10 md:p-16 text-center border border-amber-500/30 bg-neutral-900/90 shadow-2xl"
           >
-            {/* Decorative glow spots */}
-            <div className="absolute -top-20 -left-20 w-72 h-72 rounded-full bg-amber-500/10 blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-20 -right-20 w-72 h-72 rounded-full bg-yellow-500/10 blur-3xl pointer-events-none" />
-            <div className="absolute inset-0 rounded-3xl ring-1 ring-amber-500/20 pointer-events-none" />
-
-            {/* Gold shimmer line */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-gradient-to-r from-transparent via-amber-400 to-transparent" />
-
-            <div className="relative z-10">
-              {/* Badge */}
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-400 text-xs font-bold tracking-widest uppercase mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-                Limited Project Slots Available
-              </span>
-
-              <h2 className="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-4">
-                Ready to Begin Your{' '}
-                <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent">
-                  Dream Project?
-                </span>
-              </h2>
-              <p className="text-neutral-400 text-sm md:text-base max-w-xl mx-auto mb-10 leading-relaxed">
-                Connect with Creative Living's design consultants today. Get a detailed quote, 3D visualization, and project timeline — completely free.
-              </p>
-
-              {/* Buttons */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link
-                  to="/contact"
-                  className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-amber-500 to-yellow-500 text-black font-bold text-sm shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50 hover:scale-105 transition-all duration-300"
-                >
-                  Get an Instant Quote
-                  <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-                </Link>
-                <Link
-                  to="/gallery"
-                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-white/20 text-white font-semibold text-sm hover:border-amber-400/50 hover:text-amber-300 hover:scale-105 transition-all duration-300 backdrop-blur-sm"
-                >
-                  Browse Gallery
-                  <ArrowRight size={16} />
-                </Link>
-              </div>
-
-              {/* Trust row */}
-              <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-neutral-500 text-xs">
-                {['Bank Guarantee Included', 'ISO Certified Materials', '15+ Years Experience', 'Free 3D Design'].map((item) => (
-                  <span key={item} className="flex items-center gap-1.5">
-                    <CheckCircle size={13} className="text-amber-500" />
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">
+              Bring Your Architectural Vision to Life
+            </h2>
+            <p className="text-neutral-300 text-sm md:text-base max-w-2xl mx-auto mb-8">
+              Contact Creative Living's architects and interior design team today for free 3D space planning, consultations, and estimates.
+            </p>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 text-neutral-950 font-extrabold text-sm shadow-xl shadow-amber-500/30 hover:scale-105 transition-all duration-300"
+            >
+              Get Free Architect Consultation
+              <ArrowRight size={16} />
+            </Link>
           </motion.div>
         </section>
 
