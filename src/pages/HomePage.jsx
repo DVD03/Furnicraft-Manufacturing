@@ -94,17 +94,37 @@ const HomePage = () => {
               setCategoryTheme('All');
               navigate('/gallery');
             }}
-            className="fixed bottom-20 right-6 sm:bottom-6 sm:right-52 z-40 flex items-center space-x-3 p-2.5 rounded-full bg-neutral-950/90 border border-amber-500/40 shadow-2xl backdrop-blur-xl group hover:border-amber-400 transition-all cursor-pointer"
+            className="fixed bottom-20 right-4 sm:bottom-6 sm:right-52 z-40 flex items-center space-x-3 p-2 sm:p-2.5 rounded-full bg-neutral-950/90 border border-amber-500/40 shadow-2xl backdrop-blur-xl group hover:border-amber-400 transition-all cursor-pointer"
           >
-            <div className="relative w-10 h-10 flex items-center justify-center">
-              <svg className="w-10 h-10 transform -rotate-90">
+            <div className="relative w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center">
+              <svg className="w-9 h-9 sm:w-10 sm:h-10 transform -rotate-90">
+                <circle
+                  cx="18"
+                  cy="18"
+                  r="14"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  className="text-neutral-800 sm:hidden"
+                  fill="transparent"
+                />
+                <circle
+                  cx="18"
+                  cy="18"
+                  r="14"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeDasharray={100}
+                  strokeDashoffset={100 - scrollPercent}
+                  className="text-amber-400 transition-all duration-150 sm:hidden"
+                  fill="transparent"
+                />
                 <circle
                   cx="20"
                   cy="20"
                   r="16"
                   stroke="currentColor"
                   strokeWidth="3"
-                  className="text-neutral-800"
+                  className="text-neutral-800 hidden sm:block"
                   fill="transparent"
                 />
                 <circle
@@ -115,11 +135,11 @@ const HomePage = () => {
                   strokeWidth="3"
                   strokeDasharray={100}
                   strokeDashoffset={100 - scrollPercent}
-                  className="text-amber-400 transition-all duration-150"
+                  className="text-amber-400 transition-all duration-150 hidden sm:block"
                   fill="transparent"
                 />
               </svg>
-              <span className="absolute text-[10px] font-black text-amber-300">{scrollPercent}%</span>
+              <span className="absolute text-[9px] sm:text-[10px] font-black text-amber-300">{scrollPercent}%</span>
             </div>
 
             <div className="hidden sm:flex flex-col pr-2">
@@ -136,7 +156,7 @@ const HomePage = () => {
       </AnimatePresence>
 
       {/* SECTION 1: HERO */}
-      <section className="relative min-h-screen flex items-center justify-center pt-36 lg:pt-40 pb-12 px-4 sm:px-6 lg:px-8">
+      <section className="relative min-h-[100dvh] lg:min-h-screen flex items-center justify-center pt-24 sm:pt-32 lg:pt-40 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8">
         {/* Wood grain background */}
         <div 
           className="absolute inset-0 z-0 opacity-20 bg-cover bg-center mix-blend-overlay"
@@ -146,60 +166,60 @@ const HomePage = () => {
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-500/30 rounded-full blur-[100px] -z-10 mix-blend-screen" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-600/20 rounded-full blur-[100px] -z-10 mix-blend-screen" />
 
-        <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center z-10">
+        <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-8 lg:gap-12 items-center z-10">
           <motion.div 
             initial="hidden"
             animate="visible"
             variants={containerVariant}
-            className="space-y-8"
+            className="space-y-5 sm:space-y-6 lg:space-y-8"
           >
             {/* Pill tag */}
-            <motion.div variants={fadeUpVariant} className="inline-flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-md bg-neutral-900/50 border border-amber-500/30 text-amber-400 text-sm font-medium tracking-wider">
-              <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-              Perfect Blend of Tradition & Technology | SINCE 1997
+            <motion.div variants={fadeUpVariant} className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full backdrop-blur-md bg-neutral-900/60 border border-amber-500/30 text-amber-400 text-xs sm:text-sm font-medium tracking-wider max-w-full">
+              <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse shrink-0"></span>
+              <span className="truncate sm:whitespace-normal">Perfect Blend of Tradition & Technology | SINCE 1997</span>
             </motion.div>
 
             {/* Title */}
-            <motion.h1 variants={fadeUpVariant} className="text-5xl md:text-7xl font-extrabold leading-tight">
-              Architectural <br/>
+            <motion.h1 variants={fadeUpVariant} className="text-3xl xs:text-4xl sm:text-6xl md:text-7xl font-extrabold leading-tight">
+              Architectural <br className="hidden xs:inline"/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-500 to-amber-600 animate-pulse">
                 Interior Design
               </span>
             </motion.h1>
 
             {/* Subtitle */}
-            <motion.div variants={fadeUpVariant} className="flex items-center gap-4">
-              <div className="w-12 h-1 bg-amber-500 rounded-full" />
-              <h2 className="text-2xl md:text-3xl font-light text-neutral-300">
+            <motion.div variants={fadeUpVariant} className="flex items-center gap-3">
+              <div className="w-8 sm:w-12 h-1 bg-amber-500 rounded-full shrink-0" />
+              <h2 className="text-lg sm:text-2xl md:text-3xl font-light text-neutral-300">
                 & Engineering Excellence
               </h2>
             </motion.div>
 
             {/* Description */}
-            <motion.p variants={fadeUpVariant} className="text-lg text-neutral-400 max-w-xl leading-relaxed">
+            <motion.p variants={fadeUpVariant} className="text-sm sm:text-base md:text-lg text-neutral-400 max-w-xl leading-relaxed">
               Furnicraft Manufacturing brings 27 years of Sri Lankan heritage into modern luxury spaces. We deliver premium interiors with unmatched guarantees.
             </motion.p>
 
             {/* Stats Cards */}
-            <motion.div variants={fadeUpVariant} className="flex flex-wrap gap-4">
+            <motion.div variants={fadeUpVariant} className="grid grid-cols-3 gap-2 sm:gap-4">
               {[
                 { label: 'DELIVERY', value: '40 DAYS', color: 'border-amber-500/50' },
                 { label: 'BUDGET', value: '40 LAKHS', color: 'border-orange-500/50' },
                 { label: 'ASSURANCE', value: '100% BANK GUARANTEE', color: 'border-emerald-500/50' }
               ].map((stat, idx) => (
-                <div key={idx} className={`px-5 py-3 rounded-xl backdrop-blur-xl bg-neutral-900/60 border ${stat.color}`}>
-                  <div className="text-xs text-neutral-400 font-medium mb-1">{stat.label}</div>
-                  <div className="text-sm font-bold text-white">{stat.value}</div>
+                <div key={idx} className={`p-2 sm:px-5 sm:py-3 rounded-xl backdrop-blur-xl bg-neutral-900/60 border ${stat.color} text-center sm:text-left`}>
+                  <div className="text-[10px] sm:text-xs text-neutral-400 font-medium mb-0.5 sm:mb-1 truncate">{stat.label}</div>
+                  <div className="text-xs sm:text-sm font-bold text-white leading-tight">{stat.value}</div>
                 </div>
               ))}
             </motion.div>
 
             {/* CTA Buttons */}
-            <motion.div variants={fadeUpVariant} className="flex flex-wrap gap-4 pt-4">
-              <Link to="/projects" className="px-8 py-4 bg-gradient-to-r from-amber-500 to-yellow-600 text-black font-bold rounded-full hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] transition-all flex items-center gap-2">
-                Explore Projects <ArrowRight className="w-5 h-5" />
+            <motion.div variants={fadeUpVariant} className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
+              <Link to="/projects" className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-amber-500 to-yellow-600 text-black font-bold text-sm sm:text-base rounded-full hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] transition-all flex items-center justify-center gap-2">
+                Explore Projects <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </Link>
-              <Link to="/contact" className="px-8 py-4 backdrop-blur-md bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-all font-medium">
+              <Link to="/contact" className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 backdrop-blur-md bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-all font-medium text-sm sm:text-base text-center justify-center flex items-center">
                 Book Consultation
               </Link>
             </motion.div>

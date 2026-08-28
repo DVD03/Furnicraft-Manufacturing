@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useSpring, useTransform } from 'framer-motion';
 import { ShieldCheck, PhoneCall, LayoutDashboard, Award, ChevronRight, Menu, X } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import logoImg from '../assets/logo.png';
@@ -26,6 +26,7 @@ export default function Navbar() {
     damping: 30,
     restDelta: 0.001
   });
+  const opacityProgress = useTransform(scrollYProgress, [0, 0.005], [0, 1]);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -193,7 +194,7 @@ export default function Navbar() {
         {/* Animated Scroll Progress Line directly along Navbar bottom edge */}
         <motion.div 
           className="h-[3px] w-full bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-500 origin-left shadow-[0_0_12px_rgba(245,158,11,0.8)]"
-          style={{ scaleX }}
+          style={{ scaleX, opacity: opacityProgress }}
         />
       </header>
 
