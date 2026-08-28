@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: furnicraft-backend-api
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: MONGODB_URI
+        value: mongodb+srv://raxwotechnology_db_user:U8RdQQyqCpAyTzgd@cluster0.ih2hzvg.mongodb.net/furnicraft_db?retryWrites=true&w=majority
